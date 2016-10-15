@@ -2,7 +2,7 @@ FROM php:apache
 
 RUN a2enmod rewrite expires headers substitute
 
-RUN mkdir -p /lib/kerberos \
+RUN mkdir -p /usr/kerberos \
 	&& ln -s /usr/lib/x86_64-linux-gnu/ /usr/kerberos/lib \
 	&& ln -s /usr/lib64/x86_64-linux-gnu/ /usr/kerberos/lib64
 # install the PHP extensions we need
