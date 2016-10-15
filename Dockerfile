@@ -34,8 +34,8 @@ WORKDIR /var/www
 
 RUN curl -o limesurvey.zip -SL https://www.limesurvey.org/stable-release?download=1884:limesurvey2543%20161014zip \
 	&& unzip limesurvey.zip -d /var/www \
-	&& cp /var/www/limesurvey/* /var/www/html \
-	&& rm -r /var/www/limesurvey \
+	&& rm -r /var/www/html \
+	&& mv /var/www/limesurvey /var/www/html \
 	&& chown -R www-data:www-data /var/www/html
   
 EXPOSE 80
