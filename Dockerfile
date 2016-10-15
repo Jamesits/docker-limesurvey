@@ -30,7 +30,6 @@ RUN { \
 		echo 'max_execution_time=600'; \
 	} > /usr/local/etc/php/conf.d/php-recommended.ini
 
-VOLUME /var/www/html
 WORKDIR /var/www
 
 RUN curl -o limesurvey.zip -SL https://www.limesurvey.org/stable-release?download=1884:limesurvey2543%20161014zip \
