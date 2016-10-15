@@ -6,7 +6,7 @@ RUN mkdir -p /usr/kerberos \
 	&& ln -s /usr/lib/x86_64-linux-gnu/ /usr/kerberos/lib \
 	&& ln -s /usr/lib64/x86_64-linux-gnu/ /usr/kerberos/lib64
 # install the PHP extensions we need
-RUN apt-get update && apt-get upgrade -y && apt-get install -y libpng12-dev libjpeg-dev zlib1g-dev libcurl4-gnutls-dev libssl-dev libc-client2007e-dev libkrb5-dev less sudo \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y libpng13-dev libjpeg-dev zlib1g-dev libcurl4-gnutls-dev libssl-dev libc-client2007e-dev libkrb5-dev less sudo unzip \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
 	&& docker-php-ext-configure imap --with-imap-ssl --with-kerberos \
