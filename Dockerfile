@@ -34,7 +34,7 @@ VOLUME /var/www/html
 WORKDIR /var/www/html
 
 RUN curl -o limesurvey.zip -SL https://www.limesurvey.org/stable-release?download=1884:limesurvey2543%20161014zip \
-	&& unzip limesurvey.zip -D /var/www/html \
+	&& unzip limesurvey.zip -d /var/www/html \
 	&& rm limesurvey.zip \
 	&& chown -R www-data:www-data /var/www/html
   
