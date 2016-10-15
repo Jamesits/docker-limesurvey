@@ -6,7 +6,7 @@ RUN a2enmod rewrite expires headers substitute
 RUN apt-get update && apt-get upgrade -y && apt-get install -y libpng12-dev libjpeg-dev zlib1g-dev libcurl4-gnutls-dev libc-client2007e-dev less sudo \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-	&& docker-php-ext-configure imap --with-imap-ssl \
+	&& docker-php-ext-configure imap --with-imap-ssl --with-kerberos \
 	&& docker-php-ext-install gd mysqli opcache zip bcmath pdo pdo_mysql curl imap
 
 # set recommended PHP.ini settings
